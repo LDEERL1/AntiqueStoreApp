@@ -6,7 +6,7 @@ using System.Windows;
 
 public class DataAccess
 {
-    private string connectionString = "Server=DESKTOP-F9V8BJ6;Database=AntiqueStore;Integrated Security=True;";
+    private string connectionString = "Server=.;Database=AntiqueStore;Integrated Security=True;";
 
 
 
