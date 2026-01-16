@@ -1,0 +1,70 @@
+﻿<Window x:Class="AntiqueStoreApp.AddEditProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AntiqueStoreApp"
+        Title="Добавить/Редактировать Товар" Height="750" Width="400">
+
+    <Window.Resources>
+        <local:TextToVisibilityConverter x:Key="TextToVisibilityConverter" />
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Название товара -->
+        <Grid Margin="10" Grid.Row="0">
+            <TextBlock Text="Введите название товара" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <TextBox x:Name="NameTextBox" Margin="0,50,0,0" />
+        </Grid>
+
+        <!-- Описание товара -->
+        <Grid Margin="10" Grid.Row="1">
+            <TextBlock Text="Введите описание товара" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <TextBox x:Name="DescriptionTextBox" Margin="0,50,0,0" />
+        </Grid>
+
+        <!-- Цена товара -->
+        <Grid Margin="10" Grid.Row="2">
+            <TextBlock Text="Введите цену товара" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <TextBox x:Name="PriceTextBox" Margin="0,50,0,0" />
+        </Grid>
+
+        <!-- Год выпуска -->
+        <Grid Margin="10" Grid.Row="3">
+            <TextBlock Text="Введите год выпуска" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <ComboBox x:Name="YearComboBox" Margin="0,50,0,0"/>
+        </Grid>
+
+        <!-- Категория -->
+        <Grid Margin="10" Grid.Row="4">
+            <TextBlock Text="Выберите категорию" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <ComboBox x:Name="CategoryComboBox" Margin="0,50,0,0"/>
+        </Grid>
+
+        <!-- Состояние -->
+        <Grid Margin="10" Grid.Row="5">
+            <TextBlock Text="Выберите состояние" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <ComboBox x:Name="ConditionComboBox" Margin="0,50,0,0"/>
+        </Grid>
+
+        <!-- Поставщик -->
+        <Grid Margin="10" Grid.Row="6">
+            <TextBlock Text="Выберите поставщика" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            <ComboBox x:Name="SupplierComboBox" Margin="0,50,0,0" DisplayMemberPath="Name" SelectedValuePath="ID"/>
+        </Grid>
+
+        <!-- Кнопка Сохранить -->
+        <Button Content="Сохранить" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Grid.Row="7" Click="SaveProduct"/>
+
+    </Grid>
+</Window>

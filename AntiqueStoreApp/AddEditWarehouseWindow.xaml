@@ -1,0 +1,82 @@
+﻿<Window x:Class="AntiqueStoreApp.AddEditWarehouseWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:AntiqueStoreApp"
+        Title="Добавить/Редактировать Склад" Height="500" Width="400">
+
+    <Window.Resources>
+        <!-- Стиль для кнопок -->
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="Background" Value="#8B0000"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#660000"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="5"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#A52A2A"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="#6B1C1C"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Выбор продукта -->
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="0">
+            <TextBlock Text="Выберите продукт" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <ComboBox x:Name="ProductComboBox" Width="300" Margin="5,5,0,0"/>
+        </StackPanel>
+
+        <!-- Количество -->
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="1">
+            <TextBlock Text="Количество" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <TextBox x:Name="QuantityTextBox" Width="300" Margin="5,5,0,0"/>
+        </StackPanel>
+
+        <!-- Место -->
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="2">
+            <TextBlock Text="Место хранения" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <ComboBox x:Name="LocationComboBox" Width="300" Margin="5,5,0,0"/>
+        </StackPanel>
+
+        <!-- Дата поступления -->
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="3">
+            <TextBlock Text="Дата поступления" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <DatePicker x:Name="ArrivalDatePicker" Width="300" Margin="5,5,0,0"/>
+        </StackPanel>
+
+        <!-- Статус -->
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="4">
+            <TextBlock Text="Статус" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <ComboBox x:Name="StatusComboBox" Width="300" Margin="5,5,0,0"/>
+        </StackPanel>
+
+        <!-- Дата заказа -->
+        <StackPanel Orientation="Vertical" Margin="10" Grid.Row="5">
+            <TextBlock Text="Дата заказа" Foreground="Gray" VerticalAlignment="Center" Margin="5,0,0,0" />
+            <DatePicker x:Name="OrderedDatePicker" Width="300" Margin="5,5,0,0"/>
+        </StackPanel>
+
+        <!-- Кнопка Сохранить -->
+        <Button Content="Сохранить" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" Grid.Row="6" Click="SaveWarehouse" Style="{StaticResource ButtonStyle}" />
+    </Grid>
+</Window>
